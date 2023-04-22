@@ -69,9 +69,9 @@ npm install -g @angular/cli
 4. Clone esse repositório e acesse a pasta
 
 ```sh
-git clone https://github.com/MatheusKerscher/Primeiro_APP_React_Native.git
+git clone https://github.com/MatheusKerscher/MoviesList.git
 
-cd Primeiro_APP_React_Native/
+cd MoviesList
 ```
 
 4. Instale os pacotes NPM
