@@ -1,4 +1,4 @@
-# MoviesList
+# Movies List
 Esse aplicativo foi desenvolvido com o intuito de aprimorar meus conhecimentos com Angular, TypeScript, JavaScript, HTML, SASS, CSS, Bootstrap e consumo de API.
 
 ## Tecnologias Utilizadas
@@ -69,9 +69,9 @@ npm install -g @angular/cli
 4. Clone esse repositório e acesse a pasta
 
 ```sh
-git clone https://github.com/MatheusKerscher/MoviesList.git
+git clone https://github.com/MatheusKerscher/movies-list.git
 
-cd MoviesList
+cd movies-list
 ```
 
 4. Instale os pacotes NPM
