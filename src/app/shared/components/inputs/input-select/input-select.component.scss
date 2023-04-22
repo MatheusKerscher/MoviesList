@@ -1,0 +1,17 @@
+.select {
+  border: 1px solid #4f200d;
+  background: transparent;
+  color: #4f200d;
+  border-radius: 10px;
+  height: 40px;
+  width: 100%;
+  padding: 0 5px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+
+  &:focus {
+    transition: 0.2s ease-in-out;
+    border-width: 2px;
+    border-color: #FF8400;
+  }
+}

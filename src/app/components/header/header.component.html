@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink='home'><img src="../../../assets/logo/movie-logo.svg" alt="logo site" width="35"></a>
+    <button class="navbar-toggler btn-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link " [ngClass]="{'active': isActivatedRouter('/home')}" aria-current="page" routerLink='home'>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': isActivatedRouter('/sobre')}" routerLink='sobre'>Sobre</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,128 @@
+<div>
+  <ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>
+</div>
+
+<div class="container my-5">
+  <form [formGroup]="formSearchMovies" class="row w-100 align-items-center justify-content-center">
+    <div class="col-12 col-md-4 col-lg-3">
+      <app-input-select
+        [textLabel]="'Gênero:'"
+        [controlName]="'gender'"
+        [formGroup]="formSearchMovies"
+        [list]="genres"
+      ></app-input-select>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+      <app-input-select
+        [textLabel]="'Idioma:'"
+        [controlName]="'language'"
+        [formGroup]="formSearchMovies"
+        [list]="languages"
+      ></app-input-select>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+      <app-input-select
+        [textLabel]="'Ordenar por:'"
+        [controlName]="'order'"
+        [formGroup]="formSearchMovies"
+        [list]="order"
+      ></app-input-select>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3 pt-0 pt-lg-3">
+      <app-button-icon
+        [showIcon]="true"
+        [icon]="faSearch"
+        (emmiterClick)="searchMovies()"
+        [buttonDisabled]="formSearchMovies.invalid"
+      ></app-button-icon>
+    </div>
+  </form>
+
+  <ng-container *ngIf="movies?.length! > 0">
+    <div class="row justify-content-center mt-3">
+      <div class="col-2 col-md-1 d-flex justify-content-end pe-0">
+        <app-button-icon
+          [showIcon]="true"
+          [icon]="faBack"
+          [buttonDisabled]="currentPage == 1"
+          [withColor]="false"
+          (emmiterClick)="changePage('back')"
+        ></app-button-icon>
+      </div>
+
+      <div class="col-4 col-md-2 col-lg-1">
+        <form [formGroup]="formCurrentPage">
+          <app-input-number
+            [formGroup]="formCurrentPage"
+            [controlName]="'currentPage'"
+            (emmiterChange)="searchMoviesByPage()"
+          ></app-input-number>
+        </form>
+      </div>
+
+      <div class="col-2 col-md-1 d-flex justify-content-start ps-0">
+        <app-button-icon
+          [showIcon]="true"
+          [icon]="faNext"
+          [withColor]="false"
+          (emmiterClick)="changePage('next')"
+        ></app-button-icon>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <ng-container *ngFor="let m of movies">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-3">
+          <app-card-movie
+            [title]="m.title!"
+            [releaseDate]="m.release_date!"
+            [evaluationNote]="m.vote_average!"
+            [voteCount]="m.vote_count!"
+            [imgUrl]="
+              m.poster_path! == null
+                ? m.backdrop_path! == null
+                  ? ''
+                  : m.backdrop_path
+                : m.poster_path!
+            "
+            (emmiterClick)="openModal(m)"
+          ></app-card-movie>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-2 col-md-1 d-flex justify-content-end pe-0">
+        <app-button-icon
+          [showIcon]="true"
+          [icon]="faBack"
+          [buttonDisabled]="currentPage == 1"
+          [withColor]="false"
+          (emmiterClick)="changePage('back')"
+        ></app-button-icon>
+      </div>
+
+      <div class="col-4 col-md-2 col-lg-1">
+        <form [formGroup]="formCurrentPage">
+          <app-input-number
+            [formGroup]="formCurrentPage"
+            [controlName]="'currentPage'"
+            (emmiterChange)="searchMoviesByPage()"
+          ></app-input-number>
+        </form>
+      </div>
+
+      <div class="col-2 col-md-1 d-flex justify-content-start ps-0">
+        <app-button-icon
+          [showIcon]="true"
+          [icon]="faNext"
+          [withColor]="false"
+          (emmiterClick)="changePage('next')"
+        ></app-button-icon>
+      </div>
+    </div>
+  </ng-container>
+</div>

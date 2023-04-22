@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #ffd93d;
+  border-radius: 0 0 30px 30px;
+  margin: 0 25px;
+}
+
+.btn-menu {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #4f200d;
+}
+
+a {
+  color: #4f200d;
+
+  &:hover {
+    color: #ff8400;
+  }
+}
+
+.active {
+  color: #ff8400 !important;
+}

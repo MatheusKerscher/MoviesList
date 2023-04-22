@@ -1,0 +1,27 @@
+.card-movie {
+  box-shadow: 3px 3px 6px 2px #aaa;
+  border-radius: 15px;
+  height: 200px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  .img-movie {
+    border-radius: 15px 0 0 15px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .title-movie{
+    font-weight: "700";
+    font-size: large;
+  }
+
+  .icon-star {
+    color: #FFD93D;
+  }
+}

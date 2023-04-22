@@ -1,0 +1,48 @@
+<div class="modal-body">
+  <div class="d-flex justify-content-end">
+    <button
+      type="button"
+      class="btn-basic btn-close-modal"
+      (click)="activeModal.close()"
+    >
+      <fa-icon [icon]="faClose"></fa-icon>
+    </button>
+  </div>
+
+  <div class="my-4">
+    <h3 class="title-movie text-center">{{ movie.title }}</h3>
+
+    <p class="mb-5 text-center">
+      <ng-container *ngIf="movie.vote_count! > 0">
+        Avaliações:
+        <strong>{{ movie.vote_count }}</strong>
+        |
+      </ng-container>
+
+      <fa-icon class="icon-star me-1" [icon]="faStar"></fa-icon>
+      <ng-container *ngIf="movie.vote_average! > 0; else semAvaliacoes">
+        <strong>{{ movie.vote_average }}</strong
+        >/10
+      </ng-container>
+      <ng-template #semAvaliacoes>
+        Não possui avaliações
+      </ng-template>
+    </p>
+
+    <p class="mb-1">
+      <strong>Genêros:</strong>
+      <span *ngFor="let g of genres; index as i">
+        {{ g + (i + 1 == genres.length ? "." : ",") }}
+      </span>
+    </p>
+
+    <p *ngIf="movie.release_date != undefined && movie.release_date != ''" class="mb-1">
+      <strong> Lançamento: </strong>
+      {{ formatDate(movie.release_date) }}
+    </p>
+
+    <p class="mb-0 movie-overview mt-2">
+      {{ movie.overview }}
+    </p>
+  </div>
+</div>

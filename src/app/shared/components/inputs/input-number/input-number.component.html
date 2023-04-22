@@ -1,0 +1,12 @@
+<div [formGroup]="formGroup" class="mb-3">
+  <app-label [forId]="controlName" [textLabel]="label"></app-label>
+  <input
+    type="number"
+    class="input-basic input-number w-100"
+    placeholder="{{ placeholder }}"
+    name="{{ controlName }}"
+    id="{{ controlName }}"
+    formControlName="{{ controlName }}"
+    (change)="emitterChange()"
+  />
+</div>

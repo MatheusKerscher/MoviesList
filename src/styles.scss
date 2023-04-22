@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+@import "ngx-toastr/toastr";
+
+:root {
+  --font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  font-family: var(--font-family) !important;
+  color: #4f200d !important;
+}
+
+a,
+p,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+button {
+  font-family: var(--font-family) !important;
+  color: #4f200d !important;
+}
+
+.input-basic {
+  border: 1px solid #4f200d;
+  border-radius: 10px;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  transition: 0.2s ease-in-out;
+
+  &:focus {
+    transition: 0.2s ease-in-out;
+    border-width: 2px;
+    border-color: #ff8400;
+  }
+}
+
+.btn-basic {
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  height: 40px;
+  padding: 8px;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transition: 0.2s ease-in-out;
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    transition: 0.2s ease-in-out;
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+.btn-close-modal {
+  width: auto !important;
+  background-color: transparent;
+  color: #000;
+  font-size: 22px;
+}
+
+// Estilo para os modais
+.modal-content {
+  border: none !important;
+  border-radius: 15px !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+// Estilo para o ngx-toastr
+.toast-container .ngx-toastr {
+  border-radius: 10px 5px 5px 10px !important;
+}
+
+.toast-success {
+  background-image: url(assets/icons-ngx-toastr/check-solid.svg) !important;
+  background-color: #8bec7b !important;
+}
+
+.toast-error {
+  background-image: url(assets/icons-ngx-toastr/xmark-solid.svg) !important;
+  background-color: #ff2626 !important;
+}
+
+.toast-info {
+  background-color: #0275d8 !important;
+}
+
+.toast-warning {
+  background-color: #ffa500 !important;
+}

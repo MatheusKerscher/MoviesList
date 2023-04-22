@@ -1,0 +1,24 @@
+<div
+  [formGroup]="formGroup"
+  class="mb-3"
+  [ngClass]="
+    formGroup.controls[controlName].invalid &&
+    (formGroup.controls[controlName].dirty ||
+      formGroup.controls[controlName].touched) &&
+    validacaoInput
+      ? 'is-invalid'
+      : ''
+  "
+>
+  <app-label [forId]="controlName" [textLabel]="textLabel"></app-label>
+  <select
+    id="{{ controlName }}"
+    [formControlName]="controlName"
+    class="select mt-2"
+    (change)="emitterClick()"
+  >
+    <option *ngFor="let l of list" value="{{ l.value }}">
+      {{ l.label }}
+    </option>
+  </select>
+</div>
